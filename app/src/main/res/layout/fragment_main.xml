@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/purple_700"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/weatherInfoContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="140dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1">
+
+        <TextView
+            android:id="@+id/cityNameTextView"
+            style="@style/Text.Light.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            tools:text="Kyiv" />
+
+        <TextView
+            android:id="@+id/temperatureTextView"
+            style="@style/Text.Light.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            tools:text="15°C" />
+
+        <ProgressBar
+            android:id="@+id/loadingProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="29dp"
+            android:layout_height="31dp"
+            android:visibility="gone"
+            android:src="@drawable/info_24" />
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/cityNameEditText"
+        style="@style/View.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:hint="@string/enter_city_name"
+        app:layout_constraintBottom_toTopOf="@+id/getWeatherByCityNameButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weatherInfoContainer"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <Button
+        android:id="@+id/getWeatherByCityNameButton"
+        style="@style/View.Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/show_the_weather"
+        app:layout_constraintEnd_toStartOf="@id/getWeatherByLocationButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityNameEditText" />
+
+    <ImageButton
+        android:id="@+id/getWeatherByLocationButton"
+        style="@style/View.Button.ImageButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/get_weather_by_location"
+        android:src="@drawable/ic_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/getWeatherByCityNameButton"
+        app:layout_constraintTop_toBottomOf="@+id/cityNameEditText" />
+
+    <Button
+        android:id="@+id/buttonKyiv"
+        style="@style/View.Button"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:text="Kyiv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/getWeatherByLocationButton" />
+
+    <Button
+        android:id="@+id/buttonLviv"
+        style="@style/View.Button"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="4dp"
+        android:text="Lviv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonKyiv" />
+
+    <Button
+        android:id="@+id/buttonKharkiv"
+        style="@style/View.Button"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:text="Kharkiv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonOdesa" />
+
+    <Button
+        android:id="@+id/buttonOdesa"
+        style="@style/View.Button"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="Odesa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLviv" />
+
+    <Button
+        android:id="@+id/buttonDnipro"
+        style="@style/View.Button"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:text="Dnipro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonKharkiv" />
+
+    <Button
+        android:id="@+id/buttonZaporizhzhia"
+        style="@style/View.Button"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:text="Zaporizhzhia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDnipro" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
